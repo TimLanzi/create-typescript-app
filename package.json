@@ -1,0 +1,36 @@
+{
+  "name": "create-typescript-app",
+  "version": "1.0.0",
+  "description": "Bootstrap an Express + TypeScript application",
+  "bin": {
+    "create-typescript-app": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ts-node-dev index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/node": "^17.0.42",
+    "@types/prompts": "^2.0.14",
+    "@types/rimraf": "^3.0.2",
+    "chalk": "4.1.2",
+    "commander": "2.20.0",
+    "cpy": "7.3.0",
+    "prompts": "^2.4.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "validate-npm-package-name": "^4.0.0"
+  }
+}
