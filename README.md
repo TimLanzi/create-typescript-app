@@ -4,3 +4,6 @@ Easily bootstrap your TypeScript project with a pre-built boilerplate. This tool
 You can use one of the predefined templates, or open a PR for one that doesn't exist yet. Existing templates include:
 - `default`: Express server with Jest, ESLint, CORS middleware, and custom-env
 - `prisma`: Default + Prisma
+- `mongoose`: Default + Mongoose
+
+Get started with `npx ts-create-app`!

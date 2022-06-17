@@ -18,12 +18,15 @@ export async function createApp({
 }:{
   appPath: string,
   packageManager: PackageManager,
-  template?: string,
+  template: string,
 }): Promise<void> {
-  // TODO if template
-  if (!template) {
-    template = 'default';
-  }
+  console.log("Template: ", chalk.cyan(template));
+  console.log()
+  // if (!template) {
+  //   template = 'default';
+  // }
+
+  // console.log("Checking for template: ", path.join(__dirname, 'templates', template))
 
   if (!fs.existsSync(path.join(__dirname, 'templates', template))) {
     console.error(`${chalk.red('Cannot create project')}. Template path ${chalk.cyan(template)} does not exist.`);

@@ -106,7 +106,7 @@ async function run(): Promise<void> {
     await createApp({
       appPath: resolvedProjectPath,
       packageManager,
-      template: !!template ? template : undefined,
+      template: !!template ? template : "default",
     })
   } catch(reason) {
     throw reason;
