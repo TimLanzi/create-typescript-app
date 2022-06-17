@@ -94,6 +94,8 @@ async function run(): Promise<void> {
     process.exit(1);
   }
 
+  // TODO prompt for tempalate choice
+
   const packageManager = !!program.useNpm
     ? 'npm'
     : !!program.usePnpm
