@@ -1,9 +1,9 @@
 {
-  "name": "create-typescript-app",
+  "name": "ts-create-app",
   "version": "0.1.3",
   "description": "Bootstrap an Express + TypeScript application",
   "bin": {
-    "create-typescript-app": "./dist/index.js"
+    "ts-create-app": "./dist/index.js"
   },
   "files": [
     "dist"
