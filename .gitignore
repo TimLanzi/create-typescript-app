@@ -1,2 +1,5 @@
-node_modules
-dist
+**/node_modules
+**/dist
+
+templates/**/package-lock.json
+templates/**/yarn.lock

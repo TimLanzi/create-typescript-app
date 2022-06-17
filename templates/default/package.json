@@ -1,14 +1,13 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Project generated with Create TypeScript App",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
     "build": "tsc",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
     "test:coverage": "npm run test -- --coverage",
-    "lint": "eslint . --ext .ts,.js",
+    "lint": "eslint . --ext .ts",
     "clean:build": "rimraf build",
     "clean:coverage": "rimraf coverage",
     "clean": "npm run clean:build && npm run clean:coverage"

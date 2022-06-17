@@ -1,0 +1,3 @@
+# Update the DATABASE_URL variable with your MongoDB URL
+
+DATABASE_URL=mongodb://localhost:27017/test-database
