@@ -3,12 +3,12 @@
   "description": "Project generated with Create TypeScript App",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
-    "build": "tsc",
+    "build": "npm run clean:build && tsc --build tsconfig.build.json",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles",
     "test:coverage": "npm run test -- --coverage",
     "lint": "eslint . --ext .ts",
-    "clean:build": "rimraf build",
+    "clean:build": "rimraf dist",
     "clean:coverage": "rimraf coverage",
     "clean": "npm run clean:build && npm run clean:coverage"
   },
