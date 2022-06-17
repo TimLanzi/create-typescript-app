@@ -8,5 +8,5 @@
     "skipLibCheck": false,
     "outDir": "dist"
   },
-  "exclude": ["node_modules", "dist", "templates"]
+  "exclude": ["**/node_modules", "**/dist", "templates"]
 }
