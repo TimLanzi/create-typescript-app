@@ -5,13 +5,13 @@ import Commander from "commander";
 import prompts from 'prompts';
 import packageJson from "./package.json";
 import { getPkgManager } from "./lib/get-package-manager";
-import { getTemplates } from "./lib/get-templates";
+import { getTemplates, TEMPLATES } from "./lib/get-templates";
 import { createApp } from "./create-app";
 import { validateNpmName } from "./lib/validate-pkg";
 
 let projectPath = '';
 
-const templates = getTemplates();
+// const templates = getTemplates();
 
 const program = new Commander.Command(packageJson.name)
   .version(packageJson.version)
@@ -37,8 +37,7 @@ const program = new Commander.Command(packageJson.name)
 
   The template you would like to use for your project.
   
-  Existing templates:
-  ` + templates.map(t => `  - ${t}\n`)
+  Existing templates:` + TEMPLATES.map(t => `\n  - ${t.value}`).join('') + '\n'
   )
   .allowUnknownOption()
   .parse(process.argv);
@@ -95,6 +94,15 @@ async function run(): Promise<void> {
   }
 
   // TODO prompt for tempalate choice
+  const res = await prompts({
+    type: 'select',
+    name: 'template',
+    message: "Pick a starter template",
+    choices: TEMPLATES,
+  });
+
+  const template = res.template;
+  // const template = typeof program.template === "string" && program.template.trim();
 
   const packageManager = !!program.useNpm
     ? 'npm'
@@ -102,13 +110,13 @@ async function run(): Promise<void> {
     ? 'pnpm'
     : getPkgManager();
 
-  const template = typeof program.template === "string" && program.template.trim();
 
   try {
     await createApp({
       appPath: resolvedProjectPath,
       packageManager,
-      template: !!template ? template : "default",
+      template,
+      // template: !!template ? template : "default",
     })
   } catch(reason) {
     throw reason;
