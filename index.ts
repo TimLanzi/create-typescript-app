@@ -27,9 +27,27 @@ const program = new Commander.Command(packageJson.name)
   `
   )
   .option(
+    '--use-yarn',
+    `
+  Explicitly tell the CLI to bootstrap the app using yarn
+  `
+  )
+  .option(
     '--use-pnpm',
     `
   Explicitly tell the CLI to bootstrap the app using pnpm
+  `
+  )
+  .option(
+    '--install',
+    `
+  Explicitly run the package manager's install command
+    `
+  )
+  .option(
+    '--no-install',
+    `
+  Explicitly do not run the package manager's install command
   `
   )
   .option('-t, --template <template>',
@@ -108,14 +126,16 @@ async function run(): Promise<void> {
     ? 'npm'
     : !!program.usePnpm
     ? 'pnpm'
+    : !!program.useYarn
+    ? 'yarn'
     : getPkgManager();
-
 
   try {
     await createApp({
       appPath: resolvedProjectPath,
       packageManager,
       template,
+      shouldInstall: program.install,
       // template: !!template ? template : "default",
     })
   } catch(reason) {

@@ -15,13 +15,15 @@ export async function createApp({
   appPath,
   packageManager,
   template,
+  shouldInstall,
 }:{
   appPath: string,
   packageManager: PackageManager,
   template: string,
+  shouldInstall: boolean,
 }): Promise<void> {
-  console.log("Template: ", chalk.cyan(template));
-  console.log()
+  // console.log("Template: ", chalk.cyan(template));
+  // console.log()
   // if (!template) {
   //   template = 'default';
   // }
@@ -93,7 +95,12 @@ export async function createApp({
     process.exit(1);
   }
 
-  await install(root, packageManager, isOnline);
+  if (shouldInstall) {
+    await install(root, packageManager, isOnline);
+  } else {
+    console.log(`Skipping install...`);
+    console.log();
+  }
 
   if (tryGitInit(root)) {
     console.log('Initialized a git repository.');
@@ -106,7 +113,6 @@ export async function createApp({
   } else {
     cdpath = appPath
   }
-  console.log("CDPATH: ", cdpath);
 
   console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`)
   console.log('Inside that directory, you can run several commands:')
