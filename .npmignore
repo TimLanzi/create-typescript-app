@@ -1,5 +1,5 @@
 **/node_modules
-**/dist
 
+templates/**/dist
 templates/**/package-lock.json
 templates/**/yarn.lock
