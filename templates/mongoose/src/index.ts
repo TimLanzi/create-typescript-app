@@ -8,8 +8,6 @@ import { DEV } from "./constants";
 import { ensureEnv } from "./lib/ensure-env";
 import logger from "./lib/logger";
 
-require("custom-env").env(process.env.NODE_ENV);
-
 async function main() {
   ensureEnv();
 

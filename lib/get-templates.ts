@@ -2,9 +2,10 @@ import fs from 'fs';
 import path from 'path';
 
 export const TEMPLATES = [
-  { title: "Default", description: "Bare-bones Express app with Jest, CORS, Eslint, and pre-configured Winston logger.", value: "default" },
+  { title: "Default", description: "Bare-bones Express app with Jest, CORS, ESLint, and pre-configured Winston logger.", value: "default" },
   { title: "Primsa", description: "Default + Prisma", value: "prisma" },
   { title: "Mongoose", description: "Default + Mongoose", value: "mongoose" },
+  { title: "Apollo Server", description: "Bare-bones Apollo Server app with Jest, ESLint, and pre-configured Winston logger", value: "apollo-server" },
 ]
 
 export function getTemplates() {

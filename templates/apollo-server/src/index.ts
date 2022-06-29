@@ -1,17 +1,19 @@
 "use strict";
 import dotenv from "custom-env";
+import { serve } from "./app";
 dotenv.env(process.env.NODE_ENV);
 
-import { serve } from "./app";
 import { ensureEnv } from "./lib/ensure-env";
 import logger from "./lib/logger";
 
 async function main() {
   ensureEnv();
 
-  const ws = await serve();
+  const server = await serve();
 
-  ws.listen(4000, () => logger.info(`> Server listening on http://localhost:4000`));
+  server.listen().then(({ url }) => {
+    logger.info(`> Server listening on ${url}`);
+  });
 }
 
 main();

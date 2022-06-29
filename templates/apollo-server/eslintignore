@@ -1,0 +1,9 @@
+node_modules
+build
+data
+logs
+mailingList
+jest.config.js
+__test__
+.eslintrc.js
+config
