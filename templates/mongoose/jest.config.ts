@@ -6,10 +6,16 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   preset: "ts-jest",
   verbose: true,
+  forceExit: true,
+  detectOpenHandles: true,
+  maxWorkers: 4,
+  testEnvironment: "node",
   coverageDirectory: "coverage",
   coveragePathIgnorePatterns: ["/node_modules/", "/__test__/"],
-  setupFilesAfterEnv: ["<rootDir>/setup-jest.ts"],
-  testPathIgnorePatterns: ["db.ts", "mocks/*"],
+  globalSetup: "<rootDir>/__test__/global-setup.ts",
+  // globalTeardown: "<rootDir>/__test__/global-teardown.ts",
+  // setupFilesAfterEnv: ["<rootDir>/__test__/setup.ts"],
+  testPathIgnorePatterns: ["db.ts", "mocks/*", "queries/*"],
 };
 
 export default config;
