@@ -39,12 +39,6 @@ const program = new Commander.Command(packageJson.name)
   `
   )
   .option(
-    '--install',
-    `
-  Explicitly run the package manager's install command
-    `
-  )
-  .option(
     '--no-install',
     `
   Explicitly do not run the package manager's install command
@@ -111,7 +105,6 @@ async function run(): Promise<void> {
     process.exit(1);
   }
 
-  // TODO prompt for tempalate choice
   const res = await prompts({
     type: 'select',
     name: 'template',
