@@ -1,6 +1,6 @@
 {
   "name": "ts-create-app",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Bootstrap an Express + TypeScript application",
   "keywords": ["typescript", "cli", "generator"],
   "author": "Tim Lanzi",

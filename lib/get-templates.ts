@@ -6,6 +6,7 @@ export const TEMPLATES = [
   { title: "Primsa", description: "Default + Prisma", value: "prisma" },
   { title: "Mongoose", description: "Default + Mongoose", value: "mongoose" },
   { title: "Apollo Server", description: "Bare-bones Apollo Server app with Jest, ESLint, and pre-configured Winston logger", value: "apollo-server" },
+  { title: "Apollo Server Express", description: "Apollo Server template with apollo-server-express instead", value: "apollo-server-express" },
 ]
 
 export function getTemplates() {
